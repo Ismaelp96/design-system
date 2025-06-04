@@ -1,10 +1,10 @@
 {
-	"name": "@ignite-ui/tokens",
+	"name": "@ignite-ui/react",
 	"version": "1.0.0",
 	"description": "",
 	"main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"dev": "tsup src/index.ts --format esm,cjs --dts --watch",
 		"build": "tsup src/index.ts --format esm,cjs --dts"
@@ -14,7 +14,8 @@
 	"license": "ISC",
 	"type": "commonjs",
 	"devDependencies": {
-		"tsup": "^8.5.0",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"@ignite-ui/tokens": "*",
+		"tsup": "^8.5.0"
 	}
 }
