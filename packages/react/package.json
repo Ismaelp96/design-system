@@ -6,8 +6,8 @@
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
 	"scripts": {
-		"dev": "tsup src/index.ts --format esm,cjs --dts --watch",
-		"build": "tsup src/index.ts --format esm,cjs --dts",
+		"dev": "tsup src/index.tsx --format esm,cjs --dts --watch --external react",
+		"build": "tsup src/index.tsx --format esm,cjs --dts --external react",
 		"lint": "eslint src/**/*.ts* --fix"
 	},
 	"keywords": [],
@@ -15,10 +15,13 @@
 	"license": "MIT",
 	"type": "commonjs",
 	"devDependencies": {
-		"@ignite-ui/ts-config": "*",
-		"@ignite-ui/tokens": "*",
 		"@ignite-ui/eslint-config": "*",
-		"typescript": "^5.8.3",
-		"tsup": "^8.5.0"
+		"@ignite-ui/tokens": "*",
+		"@ignite-ui/ts-config": "*",
+		"@types/react": "^19.1.6",
+		"@types/react-dom": "^19.1.6",
+		"react": "^19.1.0",
+		"tsup": "^8.5.0",
+		"typescript": "^5.8.3"
 	}
 }
