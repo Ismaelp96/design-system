@@ -5,10 +5,11 @@
 	"type": "module",
 	"license": "MIT",
 	"scripts": {
+		"dev": "vite",
 		"build": "tsc -b && vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"dev": "storybook dev -p 6006",
+		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
@@ -26,7 +27,7 @@
 		"@storybook/addon-docs": "^9.0.5",
 		"@storybook/addon-onboarding": "^9.0.5",
 		"@storybook/addon-vitest": "^9.0.5",
-		"@storybook/react-vite": "^9.0.5",
+		"@storybook/react-vite": "^9.0.6",
 		"@types/react": "^19.1.2",
 		"@types/react-dom": "^19.1.2",
 		"@vitejs/plugin-react": "^4.4.1",
