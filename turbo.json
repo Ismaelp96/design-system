@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"tasks": {
+		"dev": {
+			"cache": false
+		},
+		"build": {
+			"outputs": ["dist/**"],
+			"dependsOn": ["^build"]
+		}
+	}
+}
