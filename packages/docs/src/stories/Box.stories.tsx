@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Box, type BoxProps } from '@ignite-ui/react';
+import { Box, Text } from '@ignite-ui/react';
 
 const meta = {
 	title: 'Surfaces/Box',
@@ -7,11 +7,11 @@ const meta = {
 	args: {
 		children: (
 			<>
-				<span>Testando o elemento BOX</span>
+				<Text>Testando o elemento BOX</Text>
 			</>
 		),
 	},
-} satisfies Meta<BoxProps>;
+} satisfies Meta<typeof Box>;
 
 export default meta;
 type Story = StoryObj<typeof Box>;
