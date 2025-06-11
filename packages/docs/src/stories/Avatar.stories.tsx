@@ -4,6 +4,7 @@ import { Avatar } from '@ignite-ui/react';
 const meta = {
 	title: 'Data display/Avatar',
 	component: Avatar,
+	tags: ['autodocs'],
 	args: {
 		src: 'https://github.com/ismaelp96.png',
 		alt: 'Ismael Patrick',
