@@ -16,7 +16,6 @@
 	"type": "commonjs",
 	"devDependencies": {
 		"@ignite-ui/ts-config": "*",
-		"@ignite-ui/eslint-config": "*",
 		"tsup": "^8.5.0",
 		"typescript": "^5.8.3"
 	}
