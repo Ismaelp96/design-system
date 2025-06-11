@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TextInput } from '../../../react/src/components/TextInput';
-import { Box, Text } from '@ignite-ui/react';
+import { Box, Text, TextArea } from '@ignite-ui/react';
 
 const meta = {
-	title: 'Form/TextInput',
-	component: TextInput,
+	title: 'Form/TextArea',
+	component: TextArea,
 	tags: ['autodocs'],
 	decorators: [
 		(Story) => {
@@ -12,30 +11,24 @@ const meta = {
 				<Box
 					as='label'
 					css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}>
-					<Text size='sm'>Email address</Text>
+					<Text size='sm'>Observations</Text>
 					{Story()}
 				</Box>
 			);
 		},
 	],
-} satisfies Meta<typeof TextInput>;
+} satisfies Meta;
 
 export default meta;
-
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
 	args: {
-		placeholder: 'Type your name',
+		placeholder: 'Add any observations...',
 	},
 };
 export const Disabled: Story = {
 	args: {
 		disabled: true,
-	},
-};
-export const WithPrefix: Story = {
-	args: {
-		prefix: 'cal.com/',
 	},
 };
