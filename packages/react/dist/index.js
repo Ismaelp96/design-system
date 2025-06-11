@@ -22,6 +22,18 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
@@ -51,7 +63,8 @@ __export(index_exports, {
   Box: () => Box,
   Button: () => Button,
   Heading: () => Heading,
-  Text: () => Text
+  Text: () => Text,
+  TextInput: () => TextInput
 });
 module.exports = __toCommonJS(index_exports);
 
@@ -256,8 +269,8 @@ var Text = styled("p", {
   }
 });
 
-// src/components/Heading.tsx
-var Heading = styled("h2", {
+// src/components/Heading/style.ts
+var HeadingContainer = styled("h2", {
   fontFamily: "$default",
   lineHeight: "$shorter",
   margin: 0,
@@ -278,6 +291,13 @@ var Heading = styled("h2", {
     size: "md"
   }
 });
+
+// src/components/Heading/index.tsx
+var import_jsx_runtime = require("react/jsx-runtime");
+function Heading(_a) {
+  var props = __objRest(_a, []);
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadingContainer, __spreadValues({}, props));
+}
 
 // src/components/Avatar/style.ts
 var Avatar = __toESM(require("@radix-ui/react-avatar"));
@@ -310,11 +330,63 @@ var AvatarFallBack = styled(Avatar.Fallback, {
 
 // src/components/Avatar/index.tsx
 var import_phosphor_react = require("phosphor-react");
-var import_jsx_runtime = require("react/jsx-runtime");
+var import_jsx_runtime2 = require("react/jsx-runtime");
 function Avatar2(props) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AvatarContainer, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarImage, __spreadValues({}, props)),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallBack, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.User, {}) })
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(AvatarContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(AvatarFallBack, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_phosphor_react.User, {}) })
+  ] });
+}
+
+// src/components/TextInput/styles.ts
+var TextInputContainer = styled("div", {
+  backgroundColor: "$gray900",
+  padding: "$3 $4",
+  borderRadius: "$sm",
+  boxSizing: "border-box",
+  border: "2px solid $gray900",
+  display: "flex",
+  alignItems: "baseline",
+  "&:has(input:focus)": {
+    borderColor: "$green300"
+  },
+  "&:has(input:disabled)": {
+    opacity: 0.5,
+    cursor: "not-allowed"
+  }
+});
+var Prefix = styled("span", {
+  fontFamily: "$default",
+  fontWeight: "$regular",
+  fontSize: "$sm",
+  color: "$gray400"
+});
+var Input = styled("input", {
+  fontSize: "$sm",
+  fontFamily: "$default",
+  fontWeight: "$regular",
+  backgroundColor: "transparent",
+  color: "$white",
+  border: 0,
+  width: "100%",
+  "&:focus": {
+    outline: 0
+  },
+  "&:disabled": {
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
+  }
+});
+
+// src/components/TextInput/index.tsx
+var import_jsx_runtime3 = require("react/jsx-runtime");
+function TextInput(_a) {
+  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(TextInputContainer, { children: [
+    !!prefix && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Prefix, { children: prefix }),
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Input, __spreadValues({}, props))
   ] });
 }
 // Annotate the CommonJS export names for ESM import in node:
@@ -323,5 +395,6 @@ function Avatar2(props) {
   Box,
   Button,
   Heading,
-  Text
+  Text,
+  TextInput
 });
