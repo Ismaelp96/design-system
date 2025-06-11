@@ -150,29 +150,72 @@ var {
   }
 });
 
-// src/components/Button.ts
+// src/components/Button.tsx
 var Button = styled("button", {
+  all: "unset",
+  fontSize: "$sm",
   fontFamily: "$default",
-  backgroundColor: "$green300",
+  fontWeight: "$medium",
+  textAlign: "center",
   borderRadius: "$sm",
-  border: 0,
+  padding: "0 $4",
   cursor: "pointer",
-  fontWeight: "$bold",
-  color: "$white",
+  minWidth: 120,
+  boxSizing: "border-box",
+  display: "inline-flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "$2",
+  transition: "all 0.2s ease",
+  svg: {
+    width: "$4",
+    height: "$4"
+  },
+  "&:disabled": { cursor: "not-allowed" },
   variants: {
-    size: {
-      small: {
-        fontSize: 14,
-        padding: "$2 $4"
+    variant: {
+      primary: {
+        color: "$white",
+        backgroundColor: "$green500",
+        "&:disabled": {
+          backgroundColor: "$gray200"
+        },
+        "&:not(:disabled):hover": {
+          backgroundColor: "$green300"
+        }
       },
-      large: {
-        fontSize: 16,
-        padding: "$3 $6"
+      secondary: {
+        color: "$green300",
+        border: "2px solid $green500",
+        "&:disabled": {
+          borderColor: "$gray200",
+          color: "$gray200"
+        },
+        "&:not(:disabled):hover": {
+          backgroundColor: "$green500",
+          color: "$white"
+        }
+      },
+      tertiary: {
+        color: "$gray100",
+        "&:disabled": {
+          color: "$gray600"
+        },
+        "&:not(:disabled):hover": {
+          color: "$white"
+        }
+      }
+    },
+    size: {
+      sm: { height: 38 },
+      md: {
+        height: 46
       }
     }
   },
   defaultVariants: {
-    size: "small"
+    variant: "primary",
+    size: "md"
   }
 });
 

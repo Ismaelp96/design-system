@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType } from 'react';
+import { ComponentProps } from 'react';
 import { styled } from '../styles';
 
 export const Heading = styled('h2', {
@@ -24,6 +24,4 @@ export const Heading = styled('h2', {
 	},
 });
 
-export interface HeadingProps extends ComponentProps<typeof Heading> {
-	as?: ElementType;
-}
+export interface HeadingProps extends ComponentProps<typeof Heading> {}
