@@ -377,10 +377,67 @@ var TextArea = styled("textarea", {
     color: "$gray400"
   }
 });
+
+// src/components/Checkbox/index.tsx
+import { Check } from "phosphor-react";
+
+// src/components/Checkbox/styles.ts
+import * as Checkbox from "@radix-ui/react-checkbox";
+var CheckboxContainer = styled(Checkbox.Root, {
+  all: "unset",
+  width: "$6",
+  height: "$6",
+  backgroundColor: "$gray900",
+  borderRadius: "$xs",
+  lineHeight: 0,
+  cursor: "pointer",
+  overflow: "hidden",
+  boxSizing: "border-box",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  border: "2px solid $gray900",
+  "&:focus": {
+    border: "2px solid $green300"
+  },
+  '&[data-state="checked"]': {
+    backgroundColor: "$green300"
+  },
+  '&[data-state="unchecked"]': {
+    borderColor: "$gray900"
+  }
+});
+var slideIn = keyframes({
+  from: { transform: "translateX(-100%)" },
+  to: { transform: "translateX(0%)" }
+});
+var slideOut = keyframes({
+  from: { transform: "translateX(0%)" },
+  to: { transform: "translateX(-100%)" }
+});
+var CheckboxIndicator = styled(Checkbox.Indicator, {
+  color: "$white",
+  height: "$4",
+  width: "$4",
+  '&[data-state="unchecked"]': {
+    borderColor: "$gray900",
+    animation: `${slideOut} 200ms ease-out`
+  },
+  '&[data-state="checked"]': {
+    animation: `${slideIn}  200ms ease-out`
+  }
+});
+
+// src/components/Checkbox/index.tsx
+import { jsx as jsx4 } from "react/jsx-runtime";
+function Checkbox2(props) {
+  return /* @__PURE__ */ jsx4(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ jsx4(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ jsx4(Check, { weight: "bold" }) }) }));
+}
 export {
   Avatar2 as Avatar,
   Box,
   Button,
+  Checkbox2 as Checkbox,
   Heading,
   Text,
   TextArea,

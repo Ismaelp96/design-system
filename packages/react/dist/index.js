@@ -62,6 +62,7 @@ __export(index_exports, {
   Avatar: () => Avatar2,
   Box: () => Box,
   Button: () => Button,
+  Checkbox: () => Checkbox2,
   Heading: () => Heading,
   Text: () => Text,
   TextArea: () => TextArea,
@@ -416,11 +417,68 @@ var TextArea = styled("textarea", {
     color: "$gray400"
   }
 });
+
+// src/components/Checkbox/index.tsx
+var import_phosphor_react2 = require("phosphor-react");
+
+// src/components/Checkbox/styles.ts
+var Checkbox = __toESM(require("@radix-ui/react-checkbox"));
+var CheckboxContainer = styled(Checkbox.Root, {
+  all: "unset",
+  width: "$6",
+  height: "$6",
+  backgroundColor: "$gray900",
+  borderRadius: "$xs",
+  lineHeight: 0,
+  cursor: "pointer",
+  overflow: "hidden",
+  boxSizing: "border-box",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  border: "2px solid $gray900",
+  "&:focus": {
+    border: "2px solid $green300"
+  },
+  '&[data-state="checked"]': {
+    backgroundColor: "$green300"
+  },
+  '&[data-state="unchecked"]': {
+    borderColor: "$gray900"
+  }
+});
+var slideIn = keyframes({
+  from: { transform: "translateX(-100%)" },
+  to: { transform: "translateX(0%)" }
+});
+var slideOut = keyframes({
+  from: { transform: "translateX(0%)" },
+  to: { transform: "translateX(-100%)" }
+});
+var CheckboxIndicator = styled(Checkbox.Indicator, {
+  color: "$white",
+  height: "$4",
+  width: "$4",
+  '&[data-state="unchecked"]': {
+    borderColor: "$gray900",
+    animation: `${slideOut} 200ms ease-out`
+  },
+  '&[data-state="checked"]': {
+    animation: `${slideIn}  200ms ease-out`
+  }
+});
+
+// src/components/Checkbox/index.tsx
+var import_jsx_runtime4 = require("react/jsx-runtime");
+function Checkbox2(props) {
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_phosphor_react2.Check, { weight: "bold" }) }) }));
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
   Box,
   Button,
+  Checkbox,
   Heading,
   Text,
   TextArea,
