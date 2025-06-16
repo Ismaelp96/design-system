@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import { HeadingContainer } from './style';
+import { HeadingContainer } from './styles';
 
 export interface HeadingProps extends ComponentProps<typeof HeadingContainer> {}
 
