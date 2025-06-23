@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TextInput } from '../../../react/src/components/TextInput';
-import { Box, Text } from '@ignite-ui/react';
+
+import { Box, Text, TextInput } from '@ignite-ui/react';
 
 const meta = {
 	title: 'Form/TextInput',
@@ -24,16 +24,8 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-	args: {
-		placeholder: 'Type your name',
-	},
-};
-export const Disabled: Story = {
-	args: {
-		disabled: true,
-	},
-};
+export const Primary: Story = {};
+export const Disabled: Story = {};
 export const WithPrefix: Story = {
 	args: {
 		prefix: 'cal.com/',
