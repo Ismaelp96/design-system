@@ -29,3 +29,5 @@ export const AvatarFallBack = styled(Avatar.Fallback, {
 		height: '$6',
 	},
 });
+
+

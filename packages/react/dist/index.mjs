@@ -193,6 +193,7 @@ var Button = styled("button", {
     size: "md"
   }
 });
+Button.displayName = "Button";
 
 // src/components/Box.tsx
 var Box = styled("div", {
@@ -202,6 +203,7 @@ var Box = styled("div", {
   border: "1px solid $gray600",
   color: "$gray100"
 });
+Box.displayName = "Box";
 
 // src/components/Text.tsx
 var Text = styled("p", {
@@ -230,6 +232,7 @@ var Text = styled("p", {
     size: "md"
   }
 });
+Text.displayName = "Text";
 
 // src/components/Heading/styles.ts
 var HeadingContainer = styled("h2", {
@@ -260,6 +263,7 @@ function Heading(_a) {
   var props = __objRest(_a, []);
   return /* @__PURE__ */ jsx(HeadingContainer, __spreadValues({}, props));
 }
+Heading.displayName = "Heading";
 
 // src/components/Avatar/styles.ts
 import * as Avatar from "@radix-ui/react-avatar";
@@ -299,6 +303,7 @@ function Avatar2(props) {
     /* @__PURE__ */ jsx2(AvatarFallBack, { delayMs: 600, children: /* @__PURE__ */ jsx2(User, {}) })
   ] });
 }
+Avatar2.displayName = "Avatar";
 
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
@@ -351,6 +356,7 @@ function TextInput(_a) {
     /* @__PURE__ */ jsx3(Input, __spreadValues({}, props))
   ] });
 }
+TextInput.displayName = "TextInput";
 
 // src/components/Textarea.tsx
 var TextArea = styled("textarea", {
@@ -377,6 +383,7 @@ var TextArea = styled("textarea", {
     color: "$gray400"
   }
 });
+TextArea.displayName = "TextArea";
 
 // src/components/Checkbox/index.tsx
 import { Check } from "phosphor-react";
@@ -433,6 +440,7 @@ import { jsx as jsx4 } from "react/jsx-runtime";
 function Checkbox2(props) {
   return /* @__PURE__ */ jsx4(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ jsx4(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ jsx4(Check, { weight: "bold" }) }) }));
 }
+Checkbox2.displayName = "Checkbox";
 
 // src/components/MultiStep/styles.ts
 var MultiStepContainer = styled("div", {});
@@ -476,6 +484,7 @@ function MultiStep({ size, currentStep }) {
     }) })
   ] });
 }
+MultiStep.displayName = "MultiStep";
 export {
   Avatar2 as Avatar,
   Box,
