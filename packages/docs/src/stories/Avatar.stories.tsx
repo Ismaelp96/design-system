@@ -19,4 +19,11 @@ export const WithFallback: Story = {
 	args: {
 		src: undefined,
 	},
+	argTypes: {
+		src: {
+			control: {
+				type: 'text',
+			},
+		},
+	},
 };
