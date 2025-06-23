@@ -2,12 +2,12 @@ Construindo Design System, entender como documentar os componentes do React e de
 
 # Components
 
-- [] Text
-- [] Heading
-- [] Box
-- [] Button
-- [] TextInput
-- [] TextArea
-- [] Checkbox
-- [] Avatar
-- [] Multistep
+- [X] Text
+- [X] Heading
+- [X] Box
+- [X] Button
+- [X] TextInput
+- [X] TextArea
+- [X] Checkbox
+- [X] Avatar
+- [X] Multistep
