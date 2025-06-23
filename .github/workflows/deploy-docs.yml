@@ -28,7 +28,7 @@ jobs:
         working-directory: ./packages/docs
         run: npm run build-storybook
 
-      - name: Deploy Storybook to GitHub Pages
+      - name: Deploy do Storybook para GitHub Pages
         working-directory: ./packages/docs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
